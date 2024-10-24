@@ -23,6 +23,9 @@
   "exports": {
     ".": "./dist/index.js"
   },
+  "bin": {
+    "parser-cli": "./dist/cli.js"
+  },
   "scripts": {
     "bundle": "npm run format:write && npm run package",
     "ci-test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 npx jest",
@@ -32,7 +35,8 @@
     "lint": "npx eslint .",
     "package": "npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 npx jest",
-    "all": "npm run format:write && npm run lint && npm run test && npm run coverage && npm run package"
+    "all": "npm run format:write && npm run lint && npm run test && npm run coverage && npm run package",
+    "build:cli": "npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --input src/cli.ts --output.file dist/cli.js"
   },
   "license": "MIT",
   "jest-junit": {

@@ -5,13 +5,17 @@ import { parseIssue, parseTemplate } from './parse.js'
 /**
  * The entrypoint for the action
  */
-export async function run(): Promise<void> {
+//export async function run(): Promise<void> {
+async function run(body: string, template: string, workspace: string): Promise<void> {
+
   // Get the inputs
-  const body: string = core.getInput('body', { required: true })
-  const template: string = core.getInput('issue-form-template', {
+  /*
+    const body: string = core.getInput('body', { required: true })
+    const template: string = core.getInput('issue-form-template', {
     required: true
   })
   const workspace: string = core.getInput('workspace', { required: true })
+  */
 
   core.info('Running action with the following inputs:')
   core.info(`  body: ${body}`)

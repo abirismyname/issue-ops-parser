@@ -1,6 +1,6 @@
-import commonjs from '@rollup/plugin-commonjs'
-import nodeResolve from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript'
+import commonjs from '@rollup/plugin-commonjs';
+import nodeResolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
 
 const config = {
   input: ['src/index.ts', 'src/cli.ts'],
@@ -19,6 +19,6 @@ const config = {
     }
   ],
   plugins: [typescript(), nodeResolve(), commonjs()]
-}
+};
 
-export default config
+export { config as default };
