@@ -41,6 +41,20 @@ steps:
     run: echo ${{ steps.parser.outputs.json }}
 ```
 
+## CLI Usage
+
+You can also use the core logic of this action from the command line. First, install the package globally:
+
+```bash
+npm install -g parser
+```
+
+Then, you can use the CLI as follows:
+
+```bash
+parser-cli --body "<issue-body>" --template "<template-file>" --workspace "<workspace-path>"
+```
+
 ## Inputs
 
 | Input                 | Description                               |
